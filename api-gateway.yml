@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # We will add routes here later, e.g., to the customer-service
+        - id: placeholder-route
+          uri: https://httpbin.org/get # A placeholder to test
+          predicates:
+            - Path=/test/**
+
+# This tells the gateway how to find the Eureka server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
