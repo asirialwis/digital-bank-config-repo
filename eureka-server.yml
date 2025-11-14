@@ -8,3 +8,10 @@ eureka:
     fetch-registry: false       # It shouldn't fetch a registry (it IS the registry)
   instance:
     hostname: localhost
+
+  # --- ADD THESE LINES FOR DEV ENVIRONMENT ONLY ---
+  server:
+    # Disable the self-preservation function
+    enable-self-preservation: false 
+    # Optional: Increase the frequency of cleanup checks
+    eviction-interval-timer-in-ms: 5000 
