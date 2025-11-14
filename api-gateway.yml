@@ -2,7 +2,13 @@ spring:
   cloud:
     gateway:
       routes:
-        # We will add routes here later, e.g., to the customer-service
+        # 1. NEW ROUTE for the Customer Identity Service
+        - id: customer-identity-route
+          uri: lb://CUSTOMER-IDENTITY-SERVICE # Use the service ID from Eureka
+          predicates:
+            - Path=/api/v1/users/**
+
+        # 2. We will add routes here later, e.g., to the customer-service
         - id: placeholder-route
           uri: https://httpbin.org/get # A placeholder to test
           predicates:
