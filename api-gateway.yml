@@ -27,3 +27,5 @@ spring:
       # This forces the Load Balancer to use the resolved IP (127.0.0.1) as the 
       # destination hostname, which is required for local loopback routing to work.
       use-legacy-processing: true
+      cache:
+        enabled: false
